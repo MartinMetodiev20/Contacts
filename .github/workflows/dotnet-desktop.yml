@@ -30,7 +30,7 @@ jobs:
     - name: Azure Login
       uses: azure/login@v2
       with:
-        creds: AZURE_CREDENTIALS  # Използва JSON данни за вход
+        creds: ${{ secrets.AZURE_CREDENTIALS }}  # Използва JSON данни за вход
 
     - name: Deploy to Azure
       uses: azure/webapps-deploy@v2
