@@ -27,6 +27,13 @@ jobs:
     - name: Publish the application
       run: dotnet publish -c Release -o ./publish
 
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        client-id: e9c42be3-13a6-4e23-9cd4-7204e062aaa9  # ID на клиент приложението
+        tenant-id: 3fe7e15c-d999-46ef-bf4e-9887aeb3b7b2  # ID на Azure Directory
+        client-secret: 4a06d40c-e447-42be-baef-dd0421ed10bd  # Секрет на клиента
+
     - name: Deploy to Azure
       uses: azure/webapps-deploy@v2
       with:
