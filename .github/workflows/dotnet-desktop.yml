@@ -33,6 +33,7 @@ jobs:
         client-id: e9c42be3-13a6-4e23-9cd4-7204e062aaa9  # Вашият Client ID
         tenant-id: 4a06d40c-e447-42be-baef-dd0421ed10bd  # Вашият Tenant ID
         client-secret: f69590f7-0c32-441c-a8ec-e5bcf51fa9b6  # Вашият Client Secret
+        subscription-id: e0884437-ea81-4f84-ab19-b665093af74e  # ЗАМЕНИ с реалния subscription ID
 
     - name: Deploy to Azure
       uses: azure/webapps-deploy@v2
