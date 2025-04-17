@@ -30,9 +30,9 @@ jobs:
     - name: Azure Login
       uses: azure/login@v1
       with:
-        client-id: e9c42be3-13a6-4e23-9cd4-7204e062aaa9  # ID на клиент приложението
-        tenant-id: 3fe7e15c-d999-46ef-bf4e-9887aeb3b7b2  # ID на Azure Directory
-        client-secret: 4a06d40c-e447-42be-baef-dd0421ed10bd  # Секрет на клиента
+        client-id: 614729e2-97f1-4a44-a308-ae8dc855a4d0  # ID на клиент приложението
+        tenant-id: 4a06d40c-e447-42be-baef-dd0421ed10bd  # ID на Azure Directory
+        client-secret: 90d8cc98-aa15-4ddb-92c1-6f96dbc960dd  # Секрет на клиента
 
     - name: Deploy to Azure
       uses: azure/webapps-deploy@v2
