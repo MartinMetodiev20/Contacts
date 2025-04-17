@@ -9,6 +9,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    permissions:
+      id-token: write  # Това дава write permissions на id-token
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -30,14 +33,13 @@ jobs:
     - name: Azure Login
       uses: azure/login@v1
       with:
-        client-id: ad61c955-7aa0-410b-996d-42100d971f5d   # ID на клиент приложението
-        tenant-id: 4a06d40c-e447-42be-baef-dd0421ed10bd  # ID на Azure Directory
-        client-secret: 90d8cc98-aa15-4ddb-92c1-6f96dbc960dd  # Секрет на клиента
-        subscription-id: e0884437-ea81-4f84-ab19-b665093af74e  # ID на абонамент
+        client-id: ${{ secrets.AZURE_CLIENT_ID }}  # ID на клиент приложението
+        tenant-id: ${{ secrets.AZURE_TENANT_ID }}  # ID на Azure Directory
+        client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}  # Секрет на клиента
+        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}  # ID на абонамент
 
     - name: Deploy to Azure
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'contactssinsanewebapp'  # Името на твоето Azure App Service
         package: ./publish  # Пътя към публикуваното приложение
-
